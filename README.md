@@ -1,79 +1,80 @@
 # Generate Schema Of JavaScript Objects
 
-## * Get Object Types
-## * Array To Object Conversion (key-value) pairs
-## * Convert to JavaScript Objects to JavaScript Array
-## * Add [] to JavaScript Objects
-## * Generate Array Schema
-## * Generate Object Schema
+* ### Get Object Types
+* ### Array To Object Conversion (key-value) pairs
+* ### Convert to JavaScript Objects to JavaScript Array
+* ### Add [ ] to JavaScript Objects
+* ### Generate Array Schema
+* ### Generate Object Schema
 
-### Java Script Types:
+## Java Script Types:
 
-# VALUE        TYPEOF
-## null         object
-## object       object
-## array        object
-## undefined    undefined
-## string       string
-## number       number
-## boolean      boolean
+### VALUE => TYPEOF
+### null      =>    object
+### object    =>   object
+### array     =>   object
+### undefined =>   undefined
+### string    =>   string
+### number    =>   number
+### boolean   =>   boolean
 
 # Get the object types
 
-## getType(variable);
+## ```SYNTAX: getType(variable);```
 
-console.log(getType(null)); // null
-console.log(getType(undefined)); // undefined
-console.log(getType('')); //string
-console.log(getType("sfj")); //string
-console.log(getType(`null`)); //string
-console.log(getType('')); //string
-console.log(getType(45)); //number
-console.log(getType({ hello: 'hi' })); //object
-console.log(getType({ 'hello': 'hi' })); //object
-console.log(getType(`{'hello':'hi'}`)); //string
-console.log(getType([null, undefined])); //array
-console.log(getType(['sd', '67'])); // array
-console.log(getType(`['sd','67']`)); //string
-console.log(getType('[5,6,7]')); //string
-console.log(getType(true)); //boolean
-console.log(getType(false)); //boolean
+### ```console.log(getType(null));``` // null
+### ```console.log(getType(undefined));``` // undefined
+### ```console.log(getType(''));``` //string
+### ```console.log(getType("sfj"));``` //string
+### ```console.log(getType(`null`));``` //string
+### ```console.log(getType(''));``` //string
+### ```console.log(getType(45));``` //number
+### ```console.log(getType({ hello: 'hi' }));``` //object
+### ```console.log(getType({ 'hello': 'hi' }));``` //object
+### ```console.log(getType(`{'hello':'hi'}`));``` //string
+### ```console.log(getType([null, undefined]));``` //array
+### ```console.log(getType(['sd', '67']));``` // array
+### ```console.log(getType(`['sd','67']`));``` //string
+### ```console.log(getType('[5,6,7]'));``` //string
+### ```console.log(getType(true));``` //boolean
+### ```console.log(getType(false));``` //boolean
+
 
 # converting to key-value pairs
 
-## convertToObject(keys, values);
+##  ```SYNTAX: convertToObject(keys, values);```
 ### keys => Array of Keys
 ### values => Array of values
 
-### const keys = ['name', 'age', 'gender'];
-### const values = ['Rob', '22', 'Male'];
-### const obj = convertToObject(keys, values);
-### console.log(obj);
+### ```const keys = ['name', 'age', 'gender'];```
+### ```const values = ['Rob', '22', 'Male'];```
+### ```const obj = convertToObject(keys, values);```
+### ```console.log(obj);```
 
 ### output:
 ### { name: 'Rob', age: '22', gender: 'Male' }
 
 # Converting to JavaScript Array
 
-## ObjectToArray(obj);
+## ```SYNTAX: ObjectToArray(obj);```
 
-### ObjectToArray(4);   // [ 4 ]
-### ObjectToArray('hello'); // [ 'hello' ]
-### ObjectToArray(2,3); // [ 2, 3 ]
-### ObjectToArray({name:'Rob'},{name:'John'});  // [ { name: 'Rob' }, { name: 'John' } ]
+### ```ObjectToArray(4);```// [ 4 ]
+### ```ObjectToArray('hello');```// [ 'hello' ]
+### ```ObjectToArray(2,3);```// [ 2, 3 ]
+### ```ObjectToArray({name:'Rob'},{name:'John'});```// [ { name: 'Rob' }, { name: 'John' } ]
 
 
 # Add [] to JavaScript Objects
 
-## convertToArray(obj)
+## ```SYNTAX: convertToArray(obj);```
 
-### console.log(convertToArray(4)); // [ 4 ]
-### console.log(convertToArray('hello'));   // [ 'hello' ]
-### console.log(convertToArray({ name: 'Rob' }));   // [ { name: 'Rob' } ]
+### ```console.log(convertToArray(4));``` // [ 4 ]
+### ```console.log(convertToArray('hello'));```   // [ 'hello' ]
+### ```console.log(convertToArray({ name: 'Rob' }));```   // [ { name: 'Rob' } ]
 
 # Generate Array Schema
 
-## getArraySchema(array);
+## ```SYNTAX: getArraySchema(array);```
 
 ### Examples:
 
@@ -81,7 +82,8 @@ console.log(getType(false)); //boolean
 
  ### 1.
 
- [{
+```json
+[{
     name: 'sfldkf',
     class: 7,
     subjects: [undefined, undefined, undefined],
@@ -96,9 +98,11 @@ console.log(getType(false)); //boolean
         }
     }
 }]
+```
 
 ### 2.
 
+```json
 [
     [
         [
@@ -110,11 +114,13 @@ console.log(getType(false)); //boolean
         ]
     ]
 ]
+```
 
 ### Schema : 
 
 ### 1.
 
+```json
 [
   {
     "name": "string",
@@ -128,16 +134,20 @@ console.log(getType(false)); //boolean
     }
   }
 ]
+```
 
 ### 2.
 
+```json
 [ [ [ [Array] ] ] ]
+```
 
 
 ### JSON.stringify(Schema);
 
 ### 1.
 
+```json
 [
   {
     "name": "string",
@@ -155,20 +165,23 @@ console.log(getType(false)); //boolean
     }
   }
 ]
-
+```
 ### 2.
 
+```json
 [[[[{ "name": "string", "class": "number", "subjects": "Array<string>" }]]]]
+```
 
 
 # Generate Object Schema
 
-## getObjectSchema(obj);
+## ```SYNTAX: getObjectSchema(obj);```
 
 ### Examples:
 
 ### Object :
 
+```json
 {
     name: 'ksdjfk',
     class: 6,
@@ -260,9 +273,11 @@ console.log(getType(false)); //boolean
         }
     }
 }
+```
 
 ### Schema:
 
+```json
 {
   "name": "string",
   "class": "number",
@@ -295,9 +310,11 @@ console.log(getType(false)); //boolean
     }
   }
 }
+```
 
 ### JSON.stringify(Schema);
 
+```json
 {
   "name": "string",
   "class": "number",
@@ -363,6 +380,7 @@ console.log(getType(false)); //boolean
     }
   }
 }
+```
 
 
 
