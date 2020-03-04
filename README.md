@@ -24,17 +24,12 @@
 
 ### ```console.log(getType(null));``` // null
 ### ```console.log(getType(undefined));``` // undefined
-### ```console.log(getType(''));``` //string
-### ```console.log(getType("sfj"));``` //string
 ### ```console.log(getType(`null`));``` //string
-### ```console.log(getType(''));``` //string
 ### ```console.log(getType(45));``` //number
 ### ```console.log(getType({ hello: 'hi' }));``` //object
 ### ```console.log(getType({ 'hello': 'hi' }));``` //object
 ### ```console.log(getType(`{'hello':'hi'}`));``` //string
 ### ```console.log(getType([null, undefined]));``` //array
-### ```console.log(getType(['sd', '67']));``` // array
-### ```console.log(getType(`['sd','67']`));``` //string
 ### ```console.log(getType('[5,6,7]'));``` //string
 ### ```console.log(getType(true));``` //boolean
 ### ```console.log(getType(false));``` //boolean
@@ -80,7 +75,7 @@
 
 ### array :
 
- ### 1.
+### 1.
 
 ```json
 [{
@@ -100,25 +95,8 @@
 }]
 ```
 
-### 2.
-
-```json
-[
-    [
-        [
-            [{
-                name: 'sfldkf',
-                class: 7,
-                subjects: ['dsf', 'sfdf', 'sdfsdf']
-            }]
-        ]
-    ]
-]
-```
-
 ### Schema : 
 
-### 1.
 
 ```json
 [
@@ -136,16 +114,7 @@
 ]
 ```
 
-### 2.
-
-```json
-[ [ [ [Array] ] ] ]
-```
-
-
 ### JSON.stringify(Schema);
-
-### 1.
 
 ```json
 [
@@ -166,7 +135,30 @@
   }
 ]
 ```
+
 ### 2.
+
+```json
+[
+    [
+        [
+            [{
+                name: 'sfldkf',
+                class: 7,
+                subjects: ['dsf', 'sfdf', 'sdfsdf']
+            }]
+        ]
+    ]
+]
+```
+
+### Schema : 
+
+```json
+[ [ [ [Array] ] ] ]
+```
+
+### JSON.stringify(Schema);
 
 ```json
 [[[[{ "name": "string", "class": "number", "subjects": "Array<string>" }]]]]
